@@ -65,10 +65,30 @@ button:focus-visible {
 }
 
 .form{
-  gap: 10px;
+  gap: 25px;
   width: 300px;
   display: flex; 
   flex-direction: column; 
+}
+
+.input-div{
+  display: flex;
+}
+
+.button-show-password{
+  flex: 1;
+  display: flex;
+  cursor: pointer; 
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  border: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+
+.button-show-password:hover {
+  border-color: #646cff;
 }
 
 

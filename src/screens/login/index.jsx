@@ -1,12 +1,12 @@
-import { useState } from "react"
+import { useState } from "react";
+import CustomInput from "../../components/inputs/CustomInput";
+import PasswordInput from "../../components/inputs/PasswordInput";
 
-
-const Login = ()=>{
-
+const Login = () => {
     const [erro, setErro] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const [visible, setVisible] = useState(false);
+    
 
 
     const handleSubmit = (e) =>{
@@ -26,23 +26,20 @@ const Login = ()=>{
         <div className="card">
             <form className="form" onSubmit={handleSubmit}>
                 <h2>Login</h2>
-                <input 
+                <CustomInput  
                     type="email" 
                     placeholder="Email"
                     value={email} 
-                    required
-                    onChange={(e)=>{setEmail(e.target.value)}}
-
+                    required={true}
+                    action={setEmail}
                 />
-                <input 
-                    type={visible? "text":"password"} 
-                    placeholder="Senha"
+                
+               <PasswordInput 
+                    placeholder={"Senha"} 
                     value={senha}
-                    required
-                    onChange={(e)=>{setSenha(e.target.value)}}  
+                    required={true}
+                    action={setSenha}
                 />
-                <button type="button" onClick={()=>{setVisible(!visible)}}>{visible? "Esconder": "Mostrar"}</button>
-
                 {erro && <p style={{color:"red"}}>{erro}</p>}
                 <button type="submit">Login</button>
             </form>
