@@ -61,7 +61,6 @@ button:focus-visible {
   height: 100vh;
   align-items: center; 
   justify-content: center;
-  /* background-color: red;  */
 }
 
 .form{
