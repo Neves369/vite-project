@@ -1,3 +1,4 @@
+import api from "../../api";
 import { useState } from "react";
 import CustomInput from "../../components/inputs/CustomInput";
 import PasswordInput from "../../components/inputs/PasswordInput";
@@ -9,9 +10,11 @@ const Login = () => {
     
 
 
-    const handleSubmit = (e) =>{
-        e.preventDefault();        
-        if(email === "admin@admin.com" && senha === "admin"){
+    const handleSubmit = async(e) =>{
+        e.preventDefault();    
+        const response = await api.get(`users?email=${email}&senha=${senha}`);
+
+        if(response.status === 200){
             alert("Login realizado com sucesso");
         
         }
